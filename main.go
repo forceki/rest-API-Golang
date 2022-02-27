@@ -24,6 +24,6 @@ var err error
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/posts", getMisi).Methods("GET")
+	router.HandleFunc("/misi", getMisi).Methods("GET")
 	http.ListenAndServe(":8000", router)
 }
