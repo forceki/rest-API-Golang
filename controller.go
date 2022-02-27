@@ -7,7 +7,7 @@ import (
 
 func getMisi(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	var posts []Post
+	var posts []Misi
 	var response Response
 	db := connect()
 	defer db.Close()
@@ -17,12 +17,12 @@ func getMisi(w http.ResponseWriter, r *http.Request) {
 	}
 
 	for result.Next() {
-		var post Post
-		err := result.Scan(&post.ID, &post.Misi)
+		var misi Misi
+		err := result.Scan(&misi.ID, &misi.Misi)
 		if err != nil {
 			panic(err.Error())
 		}
-		posts = append(posts, post)
+		posts = append(posts, misi)
 	}
 	response.Status = 1
 	response.Message = "Success"

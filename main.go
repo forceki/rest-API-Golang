@@ -8,7 +8,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-type Post struct {
+type Misi struct {
 	ID   string `json:"id"`
 	Misi string `json:"title"`
 }
@@ -16,7 +16,7 @@ type Post struct {
 type Response struct {
 	Status  int    `json:"status"`
 	Message string `json:"message"`
-	Data    []Post
+	Data    []Misi
 }
 
 var db *sql.DB
